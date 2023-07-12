@@ -5,7 +5,7 @@ import Layout from '../../components/Layout/Layout';
 function Home () {
   return (
     <div>
-        <Layout />
+        <Layout role={0} />
         <EventCardList />
 
     </div>
