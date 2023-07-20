@@ -1,0 +1,26 @@
+.navbar {
+    
+  justify-content: space-between;
+  top: 50px;
+  height: 68px;
+  background-color: black;
+  opacity: 0.75;
+  display: flex;
+  
+  
+  padding: 0px 30px 0px 30px;
+  margin-bottom: -5px;
+  z-index: 5;
+  
+  transition: 250ms;
+    
+    
+  }
+  .navbar__logo {
+    color: white;
+    font-family: "MonteCarlo", cursive;
+    font-size: 3rem;
+   
+    
+  }
+    

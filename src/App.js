@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Auth from './components/Auth';
+import { useSelector } from 'react-redux';
+import React from "react";
+import Header from './components/Header';
+import { Route, Routes } from 'react-router-dom';
+import EventDetail from './components/EventDetail';
+import AddEvent from './components/AddEvent';
+import AllUsers from './components/gestionUtilisateur/AllUsers';
+import CreateUser from './components/gestionUtilisateur/CreateUser';
+import Evenements from './components/Evenements';
+import UserEvent from './components/UserEvent';
 function App() {
+  const isLoggedIn = useSelector(state => state.isLoggedIn);
+  console.log(isLoggedIn);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <React.Fragment>
+    <header>
+      <Header />
+    </header>
+    
+    <main>
+        
+        <Routes>
+        
+          <Route path="api/v1/login" element={<Auth />} />
+          <Route path="/event" element={<Evenements/>} />
+          <Route path="/add" element={<AddEvent/>} />
+          <Route path="/event/add" element={<AddEvent/>} />
+          <Route path="/getAll" element={<AllUsers/>} />
+          <Route path="/add-User" element={<CreateUser />}  />
+          <Route path="/edit-User/:id" element={<CreateUser />}  />
+          <Route path="/UserEvent" element={<UserEvent />}  />
+          
+          
+        </Routes>
+      </main>
+  </React.Fragment>
+);
 }
 
 export default App;
